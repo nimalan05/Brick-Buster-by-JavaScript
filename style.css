@@ -1,0 +1,87 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+}
+.main-container {
+    display: inline-block;
+    border: 1px solid silver;
+    padding: 20px;
+}
+/* .bricks-color,
+.bricks-section {
+    padding: 5px 0px;
+} */
+label#title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+select#color {
+    padding: 3px;
+    border: 1px solid silver;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.build-tools {
+    max-width: 800px;
+}
+td {
+    padding: 10px;
+    font-size: 13px;
+}
+
+p {
+    display: inline-block;
+    margin: 0px;
+    padding: 5px 0px;
+}
+.brick-button-pane {
+    text-align: center;
+    margin-top: 10px;
+}
+button#build_btn {
+    border: none;
+    background-color: darkcyan;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.mt30{
+    margin-top: 30px;
+}
+.brick {
+    min-width: 100px;
+    background-color: black;
+    display: inline-block;
+    margin: 3px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.brick[type="cement"]{
+    background-color: red;
+}
+.brick[type="fire"]{
+    background-color: green;
+}
+.brick[type="metal"]{
+    background-color: blue;
+}
+.table{
+    display: table;
+    padding: 10px;
+    margin-top: 20px;
+}
+.table-row{
+    display: table-row;
+}
+.table-cell{
+    display: table-cell;
+    padding: 10px;
+    /* border: 1px solid gainsboro; */
+}

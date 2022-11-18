@@ -1,0 +1,184 @@
+<html>
+    <head> 
+        <title> Scirpt-Question </title>
+    </head>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+        }
+        .main-container {
+            display: inline-block;
+            border: 1px solid silver;
+            padding: 20px;
+        }
+        /* .bricks-color,
+        .bricks-section {
+            padding: 5px 0px;
+        } */
+        label#title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        select#color {
+            padding: 3px;
+            border: 1px solid silver;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .build-tools {
+            max-width: 800px;
+        }
+        td {
+            padding: 10px;
+            font-size: 13px;
+        }
+        
+        p {
+            display: inline-block;
+            margin: 0px;
+            padding: 5px 0px;
+        }
+        .brick-button-pane {
+            text-align: center;
+            margin-top: 10px;
+        }
+        button#build_btn {
+            border: none;
+            background-color: darkcyan;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .mt30{
+            margin-top: 30px;
+        }
+        .brick {
+            min-width: 100px;
+            background-color: black;
+            display: inline-block;
+            margin: 3px;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            border-radius: 3px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .brick[type="cement"]{
+            background-color: red;
+        }
+        .brick[type="fire"]{
+            background-color: green;
+        }
+        .brick[type="metal"]{
+            background-color: blue;
+        }
+        .table{
+			display: table;
+			padding: 10px;
+			margin-top: 20px;
+		}
+		.table-row{
+			display: table-row;
+		}
+		.table-cell{
+			display: table-cell;
+			padding: 10px;
+			/* border: 1px solid gainsboro; */
+		}
+       
+    </style>
+    <body>
+        <div class="main-container">
+            <h3> Personal Information </h3>
+			<div class="table">
+				<div class="table-row">
+					<div class="table-cell"> Name:</div>
+					<div class="table-cell"> Nimalan D </div>
+					<div class="table-cell"> College: </div>
+					<div class="table-cell"> Vel Tech University</div>
+					<div class="table-cell"> Department: </div>
+					<div class="table-cell"> CSE </div>
+					<div class="table-cell"> Email: </div>
+					<div class="table-cell"> nimalan05d@gmail.com </div>
+                    <div class="table-cell"> Phone: </div>
+					<div class="table-cell"> 8220479844 </div>
+				</div>
+			</div>
+            <div class="build-tools">
+                <h3 > Materials </h3>
+                <table>
+                    <tr class="bricks-color">
+                        <td> Color </td>
+                        <td>
+                            <select id="color">
+                                <option value="red"> Red </option>
+                                <option value="blue"> Blue </option>
+                                <option value="green"> Green </option>
+                            </select>
+                            
+                        </td>
+                    </tr>
+                    <tr class="bricks-section">
+                        <td>
+                            Favorite brick
+                        </td>
+                        <td>
+                            <input type="radio" id="cement_brick" name="brick_type" value="Cement" checked>
+                            <label for="cement_brick">Cement Bricks</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="fire_brick" name="brick_type" value="Fire" checked>
+                            <label for="fire_brick">Fire Bricks</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="metal_brick" name="brick_type" value="Metal" checked>
+                            <label for="metal_brick">Metal Bricks</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="brick-button-pane">
+                                <button id="build_btn" onclick="buildHome()"> Build </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+            <div class="house-layout mt30" >
+                <label id="title"> Layout </label>
+                <div id="layout">
+                    <div class="brick" type="Cement" id="cement" style="background-color: red;" onclick="buttonDelete(this)">Cement</div>
+                    <div class="brick" type="Fire" id="fire" style="background-color: green;" onclick="buttonDelete(this)">Fire</div>
+                    <div class="brick" type="Metal" id="metal" style="background-color: blue;" onclick="buttonDelete(this)">Metal</div>
+
+                </div>
+            </div>
+           
+    </body>
+    <script>
+        function buildHome(){
+            var color = document.getElementById("color").value;
+            var brickType = document.querySelector('input[name="brick_type"]:checked').value;
+            let brick = document.createElement("div");
+            brick.style.backgroundColor = color;
+            brick.className = "brick"
+            brick.innerText = brickType;
+            brick.setAttribute("id", "btn");
+            document.getElementById("layout").appendChild(brick);
+            brick.setAttribute("onclick","buttonDelete(this)");
+        }
+
+function buttonDelete(n){
+    document.getElementById(n.id).nextSibling.remove();
+
+}
+
+    </script>
+
+</html>
